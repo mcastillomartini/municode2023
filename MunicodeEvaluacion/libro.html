@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function verificar(){
+            // no vacios
+            let codigo = document.getElementById("codigo").value;
+            let nombre = document.getElementById("nombre").value;
+            let precio = document.getElementById("precio").value;
+            let paginas = document.getElementById("paginas").value;
+            if (codigo != "" && nombre !="" && precio != "" && paginas !=""){
+                if (paginas < 10){
+                    document.getElementById("mensaje").innerText = "ERROR: el minimo de paginas es 10";
+                }
+                if (precio < 5){
+                    document.getElementById("mensaje").innerText = "ERROR: el precio minimo es Q5.00";
+                }
+            }else {
+                document.getElementById("mensaje").innerText = "ERROR: hay un dato vacio";
+            }
+            
+
+        }
+    </script>
+    
+        <label for="codigo" >Codigo</label><input type="text" id="codigo"/> <br>
+        <label for="nombre" >Nombre</label><input type="text" id="nombre"/> <br>
+        <label for="precio" >Precio</label><input type="text" id="precio"/> <br>
+        <label for="paginas" >Cantidad de Paginas</label><input type="text" id="paginas"/> <br>
+        <div id="mensaje"></div>
+        <button id="aceptar" onclick="verificar()"> Aceptar</button>
+   
+</body>
+</html>
